@@ -2,28 +2,68 @@
 
 > A Hello World application built with PhoneGap
 
-## PhoneGap Build
+## Usage
+
+### Desktop
+
+In your browser, open the file:
+
+    /www/index.html
+
+### PhoneGap CLI
+
+This repository is automatically downloaded by [phonegap-cli][phonegap-cli-url]
+when you create a new application.
+
+### PhoneGap Build
 
 Create a new app with the following repository:
 
     https://github.com/phonegap/phonegap-start.git
 
-## Run Application
+### Nitrous.io
 
-    /www/index.html
+First [setup nitrous.io][nitrous-url] to use this project.
 
-## Run Tests
+Then run the following commands in the nitrous.io terminal:
 
-    /www/spec.html
+    $ cd ~/workspace/phonegap-start
+    $ npm install -g phonegap
+    $ phonegap remote build android
 
-## Issues and Pull Requests
+The last command requires an Adobe ID and will build your app on PhoneGap Build.
 
-This application is a modification of the [Apache Cordova Hello World][1].
+## Contributors
 
-For issues with __the application__, please submit an issue or pull request
-to the [Apache Cordova source code][1].
+### Updating the Application
 
-For issues with __the PhoneGap Build integration__, please submit
-an issue or pull request to this project.
+The application is based on the [Apache Cordova Hello World][cordova-app] app.
 
-[1]: https://github.com/apache/cordova-app-hello-world
+#### 1. Update the Source
+
+    cp cordova-app-hello-world/www www/
+
+__Do not replace `www/config.xml`.__
+
+__Do not replace `www/img/logo.png`.__
+
+#### 2. Update index.html
+
+Replace `<h1>Apache Cordova</h1>` with `<h1>PhoneGap</h1>`.
+
+#### 3. Update PhoneGap Version
+
+    <preference name="phonegap-version" value="x.x.x" />
+
+#### 4. Commit
+
+    $ git commit -am "Version x.x.x"
+
+#### 5. Tag
+
+    $ git tag x.x.x
+
+[phonegap-cli-url]: http://github.com/phonegap/phonegap-cli
+[cordova-app]: http://github.com/apache/cordova-app-hello-world
+[nitrous-url]: https://d3o0mnbgv6k92a.cloudfront.net/assets/hack-l-v1-3cc067e(https://www.nitrous.io/hack_button?source=embed&runtime=nodejs&repo=phonegap%2Fphonegap-start&file_to_open=README.md
+
